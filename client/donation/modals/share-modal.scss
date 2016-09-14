@@ -1,0 +1,43 @@
+.share {
+  .directShare,
+  .socialShare {
+    margin-bottom: 16px;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .directShare__link {
+    margin: 16px;
+    padding: 16px;
+    border: 1px dashed $color-grey;
+    color: $color-grey-darkest;
+  }
+
+  hr {
+    margin: 12px 0 16px 0;
+    color: $color-grey-darker;
+  }
+
+  .facebookBtn,
+  .twitterBtn {
+    margin-top: 16px;
+    color: white;
+    font-size: 1rem;
+  }
+  .facebookBtn {
+    background-color: $facebook-blue;
+    border-color: darken($facebook-blue, 5%);
+    &:hover {
+      background-color: lighten($facebook-blue, 5%);
+      border-color: $facebook-blue;
+    }
+  }
+  .twitterBtn {
+    background-color: $twitter-blue;
+    border-color: darken($twitter-blue, 5%);
+    &:hover {
+      background-color: lighten($twitter-blue, 5%);
+      border-color: $twitter-blue;
+    }
+  }
+}

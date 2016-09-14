@@ -1,9 +1,12 @@
 const DonationComponent = {
   templateUrl: 'donation.html',
   bindings: {
-    project: '='
+    project: '=',
+    onSave: '&',
+    onUnsave: '&',
+    onDonate: '&'
   },
-  controller: require('./donation.controller')
+  controller: ['$scope', '$window', require('./donation.controller')]
 };
 
 module.exports = DonationComponent;

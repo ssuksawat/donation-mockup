@@ -4,11 +4,11 @@ const app = angular.module('FundMe.projects', [
   /* Dependencies */
   require('../donation'),
 
-  /* Templates */
+  /* HTML Templates */
   require('./project.html')
 ]);
 
-app.service('ProjectService', ['$q', require('./project.service')]);
+app.service('ProjectService', ['$q', '$window', require('./project.service')]);
 app.controller('ProjectCtrl', ['$stateParams', 'ProjectService', require('./project.controller')]);
 app.config(['$stateProvider', require('./project.routes')]);
 

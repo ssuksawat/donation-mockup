@@ -1,4 +1,9 @@
 <div class="project">
   <h1>{{ proj.currentProject.title }}</h1>
-  <donation project="proj.currentProject"></donation>
+  <donation
+    project="proj.currentProject"
+    on-save="proj.addBookmark(id)"
+    on-unsave="proj.deleteBookmark(id)"
+    on-donate="proj.donate(id, amount)"
+  ></donation>
 </div>

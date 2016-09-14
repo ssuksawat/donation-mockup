@@ -29,7 +29,8 @@
   }
 }
 
-.donation__progress {
+.donation__progress .progressBar {
+  height: 16px;
 }
 
 .donation__info {
@@ -114,3 +115,8 @@
     font-size: 1rem;
   }
 }
+
+/* Modal Sass Files */
+
+@import "modals/share-modal.scss";
+@import "modals/why-modal.scss";

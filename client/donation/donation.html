@@ -1,7 +1,11 @@
 <div class="donation">
-  <div class="donation__togoBubble">
-    <strong>{{ $ctrl.project.target - $ctrl.project.current }}</strong> &nbsp;still needed for this project
+  <div class="donation__togoBubble" ng-if="$ctrl.amountRequired > 0">
+    <strong>${{ $ctrl.amountRequired }}</strong> &nbsp;still needed for this project
   </div>
+  <div class="donation__togoBubble" ng-if="$ctrl.amountRequired <= 0">
+    Project is funded! &nbsp; <strong>${{ $ctrl.project.current }}</strong> &nbsp;raised
+  </div>
+
   <div class="donation__progress">
     <progress-bar percent="{{ $ctrl.percentCompleted }}"></progress-bar>
   </div>
@@ -17,12 +21,22 @@
         <label class="donateBox__label">$</label>
         <input type="number" ng-model="$ctrl.donateAmount">
       </div>
-      <button class="btn btnPrimary donateBtn">Give Now</button>
+      <button class="btn btnPrimary donateBtn" ng-if="!$ctrl.project.donated"
+        ng-click="$ctrl.onDonate({id: $ctrl.project.id, amount: $ctrl.donateAmount})">Give Now</button>
+      <button class="btn btnPrimary donateBtn" ng-if="$ctrl.project.donated" disabled>Thanks!</button>
     </div>
-    <a class="donation__justify">Why give ${{ $ctrl.project.defaultDonation }}?</a>
+    <a class="donation__justify" ng-click="$ctrl.openWhyModal()">Why give ${{ $ctrl.project.defaultDonation }}?</a>
   </div>
   <div class="donation__otherActions">
-    <button class="btn saveBtn">Save for later</button>
-    <button class="btn shareBtn">Tell your friends</button>
+    <button class="btn saveBtn"
+      ng-if="!$ctrl.project.bookmarked"
+      ng-click="$ctrl.onSave({id: $ctrl.project.id})">Save for later</button>
+    <button class="btn saveBtn saveBtn--isSaved"
+      ng-if="$ctrl.project.bookmarked"
+      ng-click="$ctrl.onUnsave({id: $ctrl.project.id})">Saved!</button>
+    <button class="btn shareBtn" ng-click="$ctrl.openShareModal()">Tell your friends</button>
   </div>
+
+  <ng-include src="'share-modal.html'"></ng-include>
+  <ng-include src="'why-modal.html'"></ng-include>
 </div>
