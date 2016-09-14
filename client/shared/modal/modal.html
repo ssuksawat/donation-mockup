@@ -1,0 +1,17 @@
+<div class="modal">
+  <button class="modal__close-btn" ng-click="close()">
+    <i class="material-icons">close</i>
+    <small>Close</small>
+  </button>
+  <div class="modal__container">
+    <div class="modal__box">
+      <div class="modal__header">
+        {{ modalTitle }}
+      </div>
+      <div class="modal__body">
+        <ng-transclude></ng-transclude>
+      </div>
+    </div>
+  </div>
+  <div class="modal__backdrop"></div>
+</div>
