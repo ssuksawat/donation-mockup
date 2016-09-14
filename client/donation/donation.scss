@@ -1,0 +1,116 @@
+.donation {
+  width: 350px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.donation__togoBubble {
+  position: relative;
+  margin-bottom: 14px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background: darken($color-grey-darker, 20%);
+  color: $color-grey-lighter;
+  letter-spacing: 1px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    right: 15%;
+    display: block;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    background: darken($color-grey-darker, 20%);
+  }
+}
+
+.donation__progress {
+}
+
+.donation__info {
+  padding: 24px 32px;
+  border: 1px solid lightgrey;
+  border-top: none;
+  color: grey;
+  line-height: 1.5;
+}
+.donation__daysInfo {
+  margin-top: 0;
+  > em {
+    color: $accent-color-3;
+    font-style: normal;
+  }
+}
+.donation__donate {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+
+  > * {
+    max-width: 47%;
+    flex: 1;
+  }
+
+  .donateBox {
+    display: flex;
+    padding: 14px 8px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+  }
+  .donateBox__label {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    color: grey;
+  }
+  .donateBox > input {
+    width: 100%;
+    font-size: 1.2rem;
+    color: black;
+    border: none;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  .donateBtn {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+}
+
+.donation__justify {
+  font-size: 1rem;
+  padding: 0;
+  color: $color-blue;
+  font-style: italic;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background: none;
+  }
+  &:hover { color: lighten($color-blue, 10%); }
+}
+
+.donation__otherActions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    max-width: 47%;
+    flex: 1;
+    font-size: 1rem;
+  }
+}

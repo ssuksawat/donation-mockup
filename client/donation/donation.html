@@ -1,0 +1,28 @@
+<div class="donation">
+  <div class="donation__togoBubble">
+    <strong>{{ $ctrl.project.target - $ctrl.project.current }}</strong> &nbsp;still needed for this project
+  </div>
+  <div class="donation__progress">
+    <progress-bar percent="{{ $ctrl.percentCompleted }}"></progress-bar>
+  </div>
+  <div class="donation__info">
+    <p class="donation__daysInfo">
+      <em>Only {{ $ctrl.project.daysLeft }} days left</em> to fund this project
+    </p>
+    <p>
+      Join the <strong>{{ $ctrl.project.donors }}</strong> other donors who have already supported this project. Every dollars helps.
+    </p>
+    <div class="donation__donate">
+      <div class="donateBox">
+        <label class="donateBox__label">$</label>
+        <input type="number" ng-model="$ctrl.donateAmount">
+      </div>
+      <button class="btn btnPrimary donateBtn">Give Now</button>
+    </div>
+    <a class="donation__justify">Why give ${{ $ctrl.project.defaultDonation }}?</a>
+  </div>
+  <div class="donation__otherActions">
+    <button class="btn saveBtn">Save for later</button>
+    <button class="btn shareBtn">Tell your friends</button>
+  </div>
+</div>

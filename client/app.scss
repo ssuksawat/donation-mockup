@@ -1,0 +1,58 @@
+/* Import Dependencies */
+@import "variables.import.scss";
+
+/* App-wide Styling */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', Avenir, 'Helvetica Neue', 'Helvetica', sans-serif;
+}
+
+[ui-view] {
+  width: 100vw;
+  height: 100vh;
+}
+
+a,
+button {
+  transition: all .25s ease;
+}
+
+.btn {
+  padding: 12px;
+  color: $color-grey-darker;
+  background: $color-grey-lightest;
+  border: 1px solid darken($color-grey-lighter, 5%);
+  border-radius: 4px;
+  border-bottom-width: 2px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    color: lighten($color-grey-darker, 10%);
+    background: lighten($color-grey-lightest, 5%);
+  }
+}
+
+.btn.btnPrimary {
+  color: white;
+  background-color: $color-green;
+  border: 1px solid $color-green-darker;
+  &:hover {
+    background-color: lighten($color-green, 5%);
+    border-color: lighten($color-green-darker, 5%);
+  }
+}
+
+/* Import Project Sass Files */
+@import "shared/progress-bar/progress-bar.scss";
+@import "donation/donation.scss";
+@import "projects/project.scss";
