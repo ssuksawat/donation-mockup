@@ -1,5 +1,4 @@
 /* ----- Color Variables ----- */
-/* Palette: google.com/design/spec/style/color.html */
 
 $color-blue:           #2196F3;
 $color-blue-lighter:   #64B5F6;
@@ -8,7 +7,10 @@ $color-blue-darker:    #1565C0;
 $color-blue-darkest:   #0D47A1;
 
 $color-green:          #00BE1B;
+$color-green-lighter:  lighten(#00BE1B, 5%);
+$color-green-lightest: lighten(#00BE1B, 10%);
 $color-green-darker:   #13AF23;
+$color-green-darkest:  darken(#13AF23, 5%);
 
 $color-grey:           #9E9E9E;
 $color-grey-lighter:   #EEEEEE;
@@ -22,32 +24,17 @@ $color-orange-lightest:  lighten(#FF9800, 10%);
 $color-orange-darker:    #F57C00;
 $color-orange-darkest:   #E65100;
 
-$color-red:            #F44336;
-$color-red-darker:     #D32F2F;
-$color-red-darkest:    #B71C1C;
-
-$primary-color:      $color-blue;
-$primary-color-1:    $color-blue-lightest; //hue 1
-$primary-color-2:    $color-blue-darker;   //hue 2
-$primary-color-3:    $color-blue-lighter;  //hue 3
+$primary-color:      $color-green;
+$primary-color-1:    $color-green-lightest; //hue 1
+$primary-color-2:    $color-green-darker;   //hue 2
+$primary-color-3:    $color-green-lighter;  //hue 3
 $accent-color:       $color-orange;
 $accent-color-1:     $color-orange-lightest;
 $accent-color-2:     $color-orange-darker;
 $accent-color-3:     $color-orange-darkest;
 
-/* ----- RESPONSIVE Variables ----- */
-/* Consistent with Angular Material breakpoints */
-
-$screen-sm-max: 600px;
-$screen-md-min: 601px;
-$screen-md-max: 960px;
-$screen-lg-min: 961px;
-$screen-lg-max: 1200px;
-
-/* ----- SIZING Variables -----  */
-
-$header-height: 70px;
-$sidebar-width: 300px;
+$facebook-blue: #3B5998;
+$twitter-blue:  #4099FF;
 
 /* ----- Z-Indexes ----- */
 
