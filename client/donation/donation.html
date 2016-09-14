@@ -16,15 +16,14 @@
     <p>
       Join the <strong>{{ $ctrl.project.donors }}</strong> other donors who have already supported this project. Every dollars helps.
     </p>
-    <div class="donation__donate">
+    <form class="donation__donate" ng-submit="$ctrl.onDonate({id: $ctrl.project.id, amount: $ctrl.donateAmount})">
       <div class="donateBox">
         <label class="donateBox__label">$</label>
-        <input type="number" ng-model="$ctrl.donateAmount">
+        <input type="number" min="1" ng-model="$ctrl.donateAmount">
       </div>
-      <button class="btn btnPrimary donateBtn" ng-if="!$ctrl.project.donated"
-        ng-click="$ctrl.onDonate({id: $ctrl.project.id, amount: $ctrl.donateAmount})">Give Now</button>
-      <button class="btn btnPrimary donateBtn" ng-if="$ctrl.project.donated" disabled>Thanks!</button>
-    </div>
+      <button type="submit" class="btn btnPrimary donateBtn" ng-if="!$ctrl.project.donated">Give Now</button>
+      <button type="submit" class="btn btnPrimary donateBtn" ng-if="$ctrl.project.donated" disabled>Thanks!</button>
+    </form>
     <a class="donation__justify" ng-click="$ctrl.openWhyModal()">Why give ${{ $ctrl.project.defaultDonation }}?</a>
   </div>
   <div class="donation__otherActions">
