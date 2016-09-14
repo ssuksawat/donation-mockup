@@ -1,6 +1,8 @@
 # FundMe - Donation Component Mockup
 
-### How to run
+Demo Link: https://fundme-mockup.herokuapp.com
+
+## How to run
 
 ```
 npm install     # install dependencies
