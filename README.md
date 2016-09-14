@@ -1,4 +1,4 @@
-# FundMe - Donation Component Mockup
+# Donation Component Mockup
 
 Demo Link: https://fundme-mockup.herokuapp.com
 
